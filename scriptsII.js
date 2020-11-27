@@ -3,18 +3,23 @@ function toggleMenu() {
         toggleMenu.is_open = false;
     }
     if (!toggleMenu.is_open) {
-        let title = document.getElementsByName
+        let header =  document.getElementsByTagName("header")[0];
         let navlinks = document.getElementById("navlinks");
-        navlinks.style.height = "100vh";
-        //sidebar.style.display = "block";
+        let body = document.body;
         let hamburger = document.getElementById("hamburger");
+        header.style.height = "100vh";
+        navlinks.style.height = "auto";
+        body.style.overflowY = "hidden";
         hamburger.style.transform = "rotate(90deg)"
         toggleMenu.is_open = true;
     } else {
+        let header =  document.getElementsByTagName("header")[0];
         let navlinks = document.getElementById("navlinks");
-        navlinks.style.height = "0";
-        //sidebar.style.display = "none";
+        let body = document.body;
         let hamburger = document.getElementById("hamburger");
+        navlinks.style.height = "0";
+        header.style.height = "50px";
+        body.style.overflowY = "scroll";
         hamburger.style.transform = "rotate(0deg)"
         toggleMenu.is_open = false;
     }
