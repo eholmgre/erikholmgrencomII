@@ -1,0 +1,193 @@
+/* Global */
+:root {
+    --main-fg-color: #060706;
+    --main-bg-color: #f8f2de;
+
+    --secondary-fg-color: #181818;
+    --secondary-bg-color: #fcf6e5;
+
+    --transition-time: 500ms;
+}
+
+/*RESET STYLES */
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 100%;
+}
+
+li {
+    list-style-type: none;
+}
+
+h1 {
+    font-size: 1.5rem;
+}
+
+.toggle-menu {
+    box-shadow: none;
+    background: transparent;
+    border: 0;
+}
+
+body {
+    color: var(--main-fg-color);
+    background-color: var(--main-bg-color);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+/* HEADER STYLES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+header {
+    position: sticky;
+    color: var(--main-bg-color);
+    background-color: var(--main-fg-color);
+    top: 0;
+    width: 100%;
+    min-height: 50px;
+    /* height: auto; */
+    display: flex;
+    align-items: center;
+}
+
+#title {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+#title h1 {
+    display: inline;
+    padding: 1rem;
+}
+
+#banner {
+    padding: 0 2rem;
+}
+
+#hamburger {
+    justify-content: center;
+    border-right: var(--secondary-bg-color);
+    width: 50px;
+    height: 100%;
+    transition: var(--transition-time);
+    z-index: 1;
+}
+
+#hamburger:hover,
+#hamburger:active {
+    color: var(--main-fg-color);
+    background-color: var(--main-bg-color);
+}
+
+#navlinks {
+    position: fixed;
+    width: 0;
+    overflow: hidden;
+    border-top: 1px solid var(--secondary-bg-color);
+    top: 50px;
+    left: 0;
+    right: 0;
+    height: 0;
+    z-index: 2;
+}
+
+nav {
+    /* display: flex; */
+    /* align-items: flex-end; */
+    /* justify-content: space-between; */
+    transition: align-items .2s;
+}
+
+nav img {
+    display: none;
+}
+
+ul {
+    /* display: flex; */
+    margin: 50px 50px 0 0;
+    padding: 0;
+    transition: margin .2s;
+}
+
+li a {
+    display: block;
+    padding: 10px 20px;
+}
+
+
+/* MAIN STYLES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+main {
+    display: block;
+    padding: 0 20px;
+}
+
+
+/* STYLES FOR THE "scroll" CLASS
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.scroll {
+    box-shadow: 0 7px 0 0 rgba(0, 0, 0, .1);
+}
+
+.scroll .logo {
+    padding: 10px 20px;
+    font-size: 1.5rem;
+}
+
+.scroll nav {
+    align-items: center;
+}
+
+.scroll .logo,
+.scroll ul,
+.scroll .toggle-menu {
+    margin: 0;
+}
+
+
+/* MQ STYLES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+@media only screen and (min-width: 960px) {
+    body {
+        font-size: 1.2rem;
+    }
+
+    header {
+        padding: 20px;
+        display: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 200px;
+    }
+}
+
+@media only screen and (min-width: 1100px) {
+    body {
+        font-size: 1.5rem;
+    }
+
+    #content {
+        width: 1000px;
+        margin: 0 auto;
+    }
+
+    nav img {
+        display: inline-block;
+    }
+
+    #fixed img {
+        display: none;
+    }
+}
