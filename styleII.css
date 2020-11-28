@@ -1,4 +1,13 @@
 /* Global */
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&family=Source+Sans+Pro&family=Source+Serif+Pro&display=swap');
+
+/*
+    font-family: 'Source Serif Pro', serif;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Source Code Pro', monospace;
+*/
+
 :root {
     --main-fg-color: #060706;
     --main-bg-color: #f8f2de;
@@ -9,12 +18,26 @@
     --transition-time: 500ms;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+p {
+    font-family: 'Source Serif Pro', serif;
+}
+
+code {
+    font-family: 'Source Code Pro', monospace;
+}
+
+
 /*RESET STYLES */
 * {
     margin: 0;
     padding: 0;
     text-decoration: none;
     box-sizing: border-box;
+    transition: var(--transition-time);
 }
 
 html {
@@ -27,6 +50,10 @@ li {
 
 h1 {
     font-size: 1.5rem;
+}
+
+a {
+    color: var(--main-fg-color);
 }
 
 .toggle-menu {
@@ -56,11 +83,7 @@ header {
     top: 0;
     width: 100%;
     height: 50px;
-    transition: var(--transition-time);
-}
-
-.header-extended {
-    height: 100vh;
+    /* z-index: 100; */
 }
 
 #title {
@@ -86,7 +109,6 @@ header {
     border-right: var(--secondary-bg-color);
     width: 50px;
     height: 100%;
-    transition: var(--transition-time);
     cursor: pointer;
 }
 
@@ -103,39 +125,87 @@ header {
 }
 
 nav {
+    position: relative;
     left: 0;
     right: 0;
     overflow: hidden;
     height: 0;
+    color: var(--main-bg-color);
+    background-color: var(--main-fg-color);
+    /* z-index: 99; */
 }
 
 .nav-extended {
-    height: auto;
+    height: 100vh;
 }
 
-nav img {
+nav .headshot {
     display: none;
 }
 
-ul {
-    /* display: flex; */
-    margin: 50px 50px 0 0;
-    padding: 0;
-    transition: margin .2s;
+nav a {
+    color: var(--main-bg-color);
 }
+
+nav ul a:hover {
+    color: var(--secondary-bg-color);
+    background-color: var(--secondary-fg-color);
+    margin-left: 10px;
+}
+
+nav footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-top: var(--secondary-fg-color);
+    text-align: center;
+    z-index: 10;
+    /* display: grid; */
+    /* justify-items: center; */
+}
+
+
+nav footer p {
+    font-size: .7rem;
+    /* grid-column-start: 1; */
+    /* grid-column-end: 3; */
+    padding: 1rem;
+    text-align: center;
+}
+
+.linkbadge {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto;
+    display: inline-block;
+}
+
+.linkbadge:after {
+    content: "";
+    clear: both;
+}
+
+.linkbadge:hover {
+    width: 50px;
+    height: 50px;
+    /* transform: rotate(10deg); */
+}
+
 
 li a {
     display: block;
     padding: 10px 20px;
 }
 
-
-/* MAIN STYLES
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-
 main {
     display: block;
     padding: 0 20px;
+    z-index: 50;
+}
+
+main .headshot {
+    display: inline-block;
+    width: 80px;
 }
 
 
@@ -165,62 +235,82 @@ main {
 /* MQ STYLES
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
-@media only screen and (min-width: 960px) {
+@media only screen and (min-width: 736px) {
     body {
         font-size: 1.2rem;
     }
 
-    header {
-        padding: 20px;
+    nav {
+        position: fixed;
+        height: 100vh;
+        width: 0;
     }
 
-    .extended {
-
+    nav ul {
+        overflow-y: auto;
     }
 
-    .retracted {
+    .nav-extended {
+        width: 200px;
+    }
 
+    .main-extended {
+        margin-left: 200px;
     }
 }
 
-@media only screen and (min-width: 1100px) {
+@media only screen and (min-width: 1024px) {
     body {
         font-size: 1.5rem;
     }
 
     header {
-        padding: 20px;
-        display: fixed;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        width: 200px;
+        position: fixed;
+        width: 300px;
+        height: 100px;
     }
 
-    .extended {
-        top: 0;
-        bottom: 0;
-        left: 0;
-        width: 200px;
+    nav {
+        padding-top: 100px;
+        height: 100vh;
+        width: 300px;
     }
 
-    .retracted {
-        top: 0;
-        bottom: 0;
-        left: 0;
-        width: 200px;
+    nav .headshot {
+        display: block;
+        width: 150px;
+        margin: auto;
     }
 
-    #content {
-        width: 1000px;
-        margin: 0 auto;
+    main {
+        margin-left: 300px;
+        padding-top: 50px;
     }
 
-    nav img {
-        display: inline-block;
-    }
-
-    #fixed img {
+    main .headshot {
         display: none;
+    }
+    
+    main p {
+        margin-left: 10px;
+    }
+
+    .nav-extended {
+        width: 300px;
+    }
+    .body-extended {
+        overflow-y: scroll;
+    }
+
+    .main-extended {
+        margin-left: 300px;
+    }
+
+    #hamburger {
+        display: none;
+    }
+
+    nav .headshot {
+        width: 200px;
     }
 }

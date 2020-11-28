@@ -5,6 +5,8 @@
     <title>Its-a mee-a</title>
     <link rel="icon" type="image/png" href="img/pageicon.png">
     <link rel="stylesheet" href="styleII.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
     <script type="text/javascript" src="scripts.js"></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1,user-scalable=no">
@@ -16,16 +18,26 @@
             <h1 id="hamburger" onclick="toggleMenu()">&#x2261;</h1>
             <h1 id="banner">Erik Holmgren</h1>
         </div>
-        <nav>
-            <img src="img/SiteHeadshotSmall.png">
+    </header>
+    <nav>
+        <!-- <div id="nav-inner"> -->
+            <img class="headshot" src="img/SiteHeadshotSmall.png" alt="me">
             <ul>
                 <li><a href="">About</a></li>
                 <li><a href="">Resume </a></li>
                 <li><a href="">2020</a></li>
                 <li><a href="">2019</a></li>
             </ul>
-        </nav>
-    </header>
+            <footer>
+                <a href="http://www.linkedin.com"><img class="linkbadge" src="img/linkedin.svg" alt="linkedin"></a>
+                <a href="http://www.github.com"><img class="linkbadge" src="img/github.svg" alt="github"></a>
+                <a href="http://www.flickr.com"><img class="linkbadge" src="img/flickr.svg" alt="flickr"></a>
+                <p>All opinions expressed on this site are my own and do not reflect the views of any employers or
+                    affilieated orgininations past or present.</p>
+                <p>Copyright &copy; Erik Holmgren 2020</p>
+            </footer>
+        <!-- </div> -->
+    </nav>
 
     <main>
         <div id="content">
@@ -35,7 +47,7 @@
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti fugiat dicta dolor omnis ab ex,
                         consequuntur cupiditate quod inventore iste repellat aliquam libero numquam quis maiores rem,
                         voluptatum amet laboriosam!</p>
-                    <img src="img/SiteHeadshotSmall.png" alt="headshot">
+                    <img class="headshot" src="img/SiteHeadshotSmall.png" alt="me">
                 </div>
                 <h3>Resume</h3>
                 <div id="resume">

@@ -1,12 +1,12 @@
 function toggleMenu() {
-    let header = document.getElementsByTagName("header")[0];
     let navlinks = document.getElementsByTagName("nav")[0];
     let body = document.body;
     let hamburger = document.getElementById("hamburger");
-    header.classList.toggle("header-extended");
+    let main = document.getElementsByTagName("main")[0];
     navlinks.classList.toggle("nav-extended");
     hamburger.classList.toggle("hamburger-extended");
     body.classList.toggle("body-extended");
+    main.classList.toggle("main-extended");
 }
 
 /*
