@@ -8,12 +8,24 @@
     font-family: 'Source Code Pro', monospace;
 */
 
-:root {
-    --main-fg-color: #060706;
-    --main-bg-color: #f8f2de;
+/*
+Dark Moss Green: #4F5D2F
+Orange Yellow Crayola: #E9C46A
+Rich Black FORGA 29: #101419
+Chinese Violet: #7A5980
+Sage: #AFA98D
+ */
 
-    --secondary-fg-color: #181818;
-    --secondary-bg-color: #fcf6e5;
+:root {
+    /*--main-fg-color: #060706;*/
+    --main-fg-color: #101419;
+    /*--main-bg-color: #f8f2de;*/
+    --main-bg-color: #AFA98D;
+
+    /*--secondary-fg-color: #181818;*/
+    --secondary-fg-color: #4F5D2F;
+    /*--secondary-bg-color: #fcf6e5;*/
+    --secondary-bg-color: #E9C46A;
 
     --transition-time: 500ms;
 }
