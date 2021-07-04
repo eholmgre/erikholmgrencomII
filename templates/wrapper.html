@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Its-a mee-a</title>
+    <link rel="icon" type="image/png" href="{{ url_for("static", filename="img/pageicon.png") }}">
+    <link rel="stylesheet" href="{{ url_for("static", filename="style.css") }}">
+    <script type="text/javascript" src="{{ url_for("static", filename="scripts.js") }}"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1,user-scalable=no">
+</head>
+
+<body>
+    <header>
+        <div id="title">
+            <h1 id="hamburger" onclick="toggleMenu()">&#x2261;</h1>
+            <h1 id="banner">Erik Holmgren</h1>
+        </div>
+    </header>
+    <nav>
+        <!-- <div id="nav-inner"> -->
+        <img class="headshot" src="{{ url_for("static", filename="img/SiteHeadshotSmall.png") }}" alt="me">
+        <ul>
+            <li><a onclick="toggleMenu()" href="#about-me">About</a></li>
+            <li><a onclick="toggleMenu()" href="#resume">Resume </a></li>
+            <li><a onclick="toggleMenu()" href="">2020</a></li>
+            <li><a onclick="toggleMenu()" href="">2019</a></li>
+        </ul>
+        <footer>
+            <a href="https://www.linkedin.com/in/eholmgre/"><img class="linkbadge" src="{{ url_for("static", filename="img/linkedin.svg") }}" alt="linkedin"></a>
+            <a href="https://github.com/eholmgre"><img class="linkbadge" src="{{ url_for("static", filename="img/github.svg") }}" alt="github"></a>
+            <a href="https://www.flickr.com/photos/139436009@N07"><img class="linkbadge" src="{{ url_for("static", filename="img/flickr.svg") }}" alt="flickr"></a>
+            <p>All opinions expressed on this site are my own and do not reflect the views of any employers or
+                affiliated organisations past or present.</p>
+            <p>Copyright &copy; Erik Holmgren 2020</p>
+        </footer>
+        <!-- </div> -->
+    </nav>
+
+    <main>
+        <div id="content">
+            {% block content %}
+
+            {% endblock %}
+        </div>
+    </main>
+
+    <div class="counter"></div>
+</body>
+

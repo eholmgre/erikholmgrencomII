@@ -1,6 +1,8 @@
 /* Global */
 
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&family=Source+Sans+Pro&family=Source+Serif+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cantarell&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cantarell:wght@400;700&family=Oxygen&display=swap');
 
 /*
     font-family: 'Source Serif Pro', serif;
@@ -9,8 +11,8 @@
 */
 
 :root {
-    --main-fg-color: #060706;
-    --main-bg-color: #f8f2de;
+    --main-fg-color: #060c06;
+    --main-bg-color: #f8f5eb;
 
     --secondary-fg-color: #181818;
     --secondary-bg-color: #fcf6e5;
@@ -31,17 +33,18 @@ html {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Source Sans Pro', sans-serif;
+    /*font-family: 'Source Sans Pro', sans-serif;*/
+    font-family: 'Oxygen', sans-serif;
 }
 
 p {
-    font-family: 'Source Serif Pro', serif;
+    /*font-family: 'Source Serif Pro', serif;*/
+    font-family: 'Cantarell', sans-serif;
 }
 
 code {
     font-family: 'Source Code Pro', monospace;
 }
-
 
 li {
     list-style-type: none;
