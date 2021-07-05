@@ -1,0 +1,3 @@
+graft ehcom/static
+graft ehcom/templates
+global-exclude *.pyc

@@ -16,16 +16,16 @@ Chinese Violet: #7A5980
 Sage: #AFA98D
  */
 
-:root {
-    /*--main-fg-color: #060706;*/
-    --main-fg-color: #101419;
-    /*--main-bg-color: #f8f2de;*/
-    --main-bg-color: #AFA98D;
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * Global Styles                                           *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
-    /*--secondary-fg-color: #181818;*/
-    --secondary-fg-color: #4F5D2F;
-    /*--secondary-bg-color: #fcf6e5;*/
-    --secondary-bg-color: #E9C46A;
+:root {
+    --main-fg-color: #101419;
+    --main-bg-color: #cde5e2;
+
+    --secondary-fg-color: #3d174b;
+    --secondary-bg-color: #e1d0e5;
 
     --transition-time: 500ms;
 }
@@ -40,8 +40,9 @@ Sage: #AFA98D
 
 html {
     font-size: 100%;
+    font-family: "Noto Sans", sans-serif;
 }
-
+/*
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Source Sans Pro', sans-serif;
 }
@@ -49,6 +50,7 @@ h1, h2, h3, h4, h5, h6 {
 p {
     font-family: 'Source Serif Pro', serif;
 }
+*/
 
 code {
     font-family: 'Source Code Pro', monospace;
@@ -74,15 +76,19 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * Small screen sizes (tablet) and default styles          *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
 .body-extended {
     overflow-y: hidden;
 }
-
 
 header {
     position: sticky;
     color: var(--main-bg-color);
     background-color: var(--main-fg-color);
+    box-shadow: var(--main-fg-color) 0 0 0;
     top: 0;
     width: 100%;
     height: 50px;
@@ -94,7 +100,6 @@ header {
     align-items: center;
     width: 100%;
     height: 50px;
-    border-bottom: 1px solid var(--secondary-fg-color);
 }
 
 #title h1 {
@@ -109,7 +114,8 @@ header {
 #hamburger {
     justify-content: center;
     text-align: center;
-    border-right: var(--secondary-bg-color);
+    /*border-right: var(--secondary-bg-color);*/
+    fill: var(--main-bg-color);
     width: 50px;
     height: 100%;
     cursor: pointer;
@@ -117,14 +123,11 @@ header {
 
 .hamburger-extended {
     transform: rotate(90deg);
-    background-color: var(--main-bg-color);
-    color: var(--main-fg-color);
 }
 
 #hamburger:hover,
 #hamburger:active {
-    color: var(--main-fg-color);
-    background-color: var(--main-bg-color);
+    fill: var(--secondary-bg-color);
 }
 
 nav {
@@ -135,6 +138,7 @@ nav {
     height: 0;
     color: var(--main-bg-color);
     background-color: var(--main-fg-color);
+    box-shadow: var(--main-fg-color) 0 0 5px;
     /* z-index: 99; */
     text-align: center;
 }
@@ -240,16 +244,22 @@ main .headshot {
 #resume ul {
     list-style-type: square;
 }
-
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * Intermediate screen sizes (tablet)                      *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 @media only screen and (min-width: 736px) {
     body {
         font-size: 1.2rem;
+    }
+
+    header {
     }
 
     nav {
         position: fixed;
         height: 100vh;
         width: 0;
+        border-top: 1px solid var(--main-bg-color);
     }
 
     nav ul {
@@ -264,6 +274,10 @@ main .headshot {
         margin-left: 200px;
     }
 }
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * Full screen sizes (computer)                            *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 @media only screen and (min-width: 1024px) and (min-height: 670px) {
     body {
