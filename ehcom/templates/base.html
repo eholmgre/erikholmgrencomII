@@ -25,6 +25,12 @@
     <!-- <div id="nav-inner"> -->
     <img class="headshot" src="{{ url_for('static', filename='img/SiteHeadshotSmall.png') }}" alt="me">
     <ul>
+        {% if g.user %}
+            <li><span> Hello {{ g.user["username"] }}</span></li>
+            <li><a href="{{ url_for('auth.logout') }}">Log Out</a></li>
+        {% else %}
+            <li><a href="{{ url_for('auth.login') }}">Log In</a></li>
+        {% endif %}
         <li><a onclick="toggleMenu()" href="#about-me">About</a></li>
         <li><a onclick="toggleMenu()" href="#resume">Resume </a></li>
         <li><a onclick="toggleMenu()" href="">2020</a></li>
